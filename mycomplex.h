@@ -1,3 +1,4 @@
+
 #ifndef MY_COMPLEX_H
 #define MY_COMPLEX_H
 
@@ -8,27 +9,27 @@ class Complex {
     double im_;
 
 public:
-    Complex(double aRe = 0, double aIm = 0);
+    explicit Complex(double aRe = 0, double aIm = 0);
     Complex(const Complex&);
     ~Complex();
 
     void set(double aRe, double aIm = 0);
-    operator double();
-    double abs();
+    explicit operator double() const;
+    double abs() const;
 
     friend std::istream& operator>>(std::istream&, Complex&);
-    friend std::ostream& operator<<(std::ostream&, Complex&);
+    friend std::ostream& operator<<(std::ostream&, const Complex&);
 
-    Complex operator+(const Complex&);
-    Complex operator-(const Complex&);
-    Complex operator+(const double&);
+    Complex operator+(const Complex&) const;
+    Complex operator-(const Complex&) const;
+    Complex operator+(const double&) const;
     friend Complex operator+(const double&, const Complex&);
-    Complex operator-(const double&);
+    Complex operator-(const double&) const;
     friend Complex operator-(const double&, const Complex&);
-    Complex operator*(const Complex&);
-    Complex operator*(const double&);
+    Complex operator*(const Complex&) const;
+    Complex operator*(const double&) const;
     friend Complex operator*(const double&, const Complex&);
-    Complex operator/(const double&);
+    Complex operator/(const double&) const;
 
     Complex& operator+=(const Complex&);
     Complex& operator-=(const Complex&);
