@@ -9,11 +9,11 @@ class Complex {
     double im_;
 
 public:
-    explicit Complex(double aRe = 0, double aIm = 0);
+    explicit Complex(double a_re = 0, double a_im = 0);
     Complex(const Complex&);
     ~Complex();
 
-    void set(double aRe, double aIm = 0);
+    void set(double a_re, double a_im = 0);
     explicit operator double() const;
     double abs() const;
 
